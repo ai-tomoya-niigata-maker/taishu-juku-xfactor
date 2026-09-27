@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>体修塾の捻転差｜ステップインの最終盤で生まれ、そのまま使う</title>
+<style>
+  :root{--bg:#0a0e1a;--card:#111827;--line:#1e3a5f;--gold:#f6c90e;--red:#fc8181;--blue:#7dd3fc;--white:#f8fafc;--gray:#94a3b8;--body:#e2e8f0}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:32px 16px 48px}
+  .label{font-size:11px;letter-spacing:.3em;color:var(--gold);font-weight:700;text-align:center;margin:0 0 10px}
+  h1{font-size:24px;font-weight:900;text-align:center;margin:0 0 8px;line-height:1.4}
+  .lead{font-size:14px;color:var(--gray);text-align:center;line-height:1.8;max-width:600px;margin:0 auto 24px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:680px;margin:0 auto}
+  .band{height:4px;background:var(--gold)}
+  #stage{position:relative;width:100%;aspect-ratio:4/3;background:#0a0e1a}
+  #cv{width:100%;height:100%;display:block}
+  #phaseTag{position:absolute;left:14px;top:12px;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+  #phaseName{position:absolute;left:14px;top:30px;font-size:20px;font-weight:900;color:var(--white)}
+  .wm{position:absolute;top:12px;right:12px;height:34px;opacity:.92;pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.7))}
+  .pctrl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 16px 0}
+  .pctrl button{background:#1e293b;color:var(--white);border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+  .pctrl button.on{border-color:var(--gold);color:var(--gold)}
+  .slider{display:flex;align-items:center;gap:10px;margin:8px 20px 0;font-size:12px;color:var(--gray)}
+  .slider input{flex:1;accent-color:#f6c90e}
+  .graph{margin:14px 16px 0}
+  .graph svg{display:block;width:100%;height:auto}
+  .gcap{font-size:12px;color:var(--gray);margin:0 0 4px 4px;font-weight:700}
+  .verdict{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 16px 0}
+  .verdict div{background:#0a0e1a;border:1px solid var(--line);border-radius:8px;padding:8px 4px;text-align:center}
+  .verdict small{display:block;font-size:10px;color:var(--gray);letter-spacing:.1em}
+  .verdict b{font-size:17px}
+  .where{margin:12px 20px 18px;font-size:13px;line-height:1.8;color:var(--body);min-height:72px}
+  .where b{color:var(--red)}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;font-size:12px;color:var(--gray);margin:16px 0 0}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{display:inline-block;width:14px;height:14px;border-radius:3px}
+  .note{font-size:12px;color:var(--gray);line-height:1.8;text-align:center;margin:20px auto 0;max-width:600px}
+  .sig{text-align:center;font-size:11px;color:var(--gray);margin-top:36px;line-height:1.9}
+  .sig b{color:var(--white)}
+  body.still .pctrl, body.still .slider{display:none}
+  .sec3d{margin-top:56px}
+  #wrap3d{position:relative;width:100%;aspect-ratio:4/3;background:#0a0e1a;cursor:grab;touch-action:none}
+  #cv3d{width:100%;height:100%;display:block}
+  #tag3d{position:absolute;left:14px;top:12px;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+  #name3d{position:absolute;left:14px;top:30px;font-size:20px;font-weight:900;color:var(--white)}
+  #twist3d{position:absolute;left:14px;bottom:12px;font-size:13px;color:var(--gray)}
+  #twist3d b{color:var(--red);font-size:18px}
+  .hint{font-size:12px;color:var(--gray);text-align:center;margin:10px 16px 0}
+  body.shot .wrap{max-width:none;padding:0}
+  body.shot .wrap>*{display:none!important}
+  body.shot .card{display:block!important;max-width:none;border:none;border-radius:0}
+  body.shot .card>*{display:none!important}
+  body.shot #stage{display:block!important;width:100vw;height:75vw}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="label">X-FACTOR ・ TAISHU-JUKU</p>
+  <h1>体修塾の捻転差は、最後に生まれて、そのまま使う。</h1>
+  <p class="lead">右打者を真上から見た図です。体修塾は、上半身をひねりません。ロード中も肩と骨盤は構えの向きのまま。ステップインの最終盤に、骨盤が投手方向へ鋭く回り（キックバック）、同時にスイングバックでヘッドが捕手側へ倒れます。上半身はその場に留まるので、ここで一気に捻転差が生まれ、その山の頂上からスイングが始まります。戻す距離はありません。</p>
+
+  <div class="card">
+    <div class="band"></div>
+    <div id="stage">
+      <canvas id="cv"></canvas>
+      <div id="phaseTag"></div>
+      <div id="phaseName"></div>
+      <img class="wm" src="logo-text.png" alt="体修塾BCA">
+    </div>
+    <div class="pctrl" id="openBtns">
+      <span style="font-size:12px;color:var(--gray);align-self:center">完全着地での骨盤の開き</span>
+      <button data-a="45" class="on">45°</button>
+      <button data-a="65">65°</button>
+      <button data-a="90">90°（最大）</button>
+    </div>
+    <div class="pctrl">
+      <button id="play" class="on">一時停止</button>
+      <button data-sp="0.35">ゆっくり</button>
+      <button data-sp="1" class="on">ふつう</button>
+    </div>
+    <div class="slider"><span>時間</span><input type="range" id="sT" min="0" max="1000" value="0"></div>
+    <div class="graph"><p class="gcap">① 骨盤と両肩、それぞれの向き</p><svg id="gr" viewBox="0 0 640 230"></svg></div>
+    <div class="graph"><p class="gcap">② 骨盤から見た肩の撚り（＝捻転差）</p><svg id="gr2" viewBox="0 0 640 170"></svg></div>
+    <div class="verdict">
+      <div><small>捻転差</small><b id="vX" style="color:var(--red)">0°</b></div>
+      <div><small>戻す距離</small><b id="vR" style="color:var(--gold)">0°</b></div>
+      <div><small>バネの張り（SSC）</small><b id="vS" style="color:var(--white)">—</b></div>
+    </div>
+    <div class="where" id="where"></div>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:#7dd3fc"></i>骨盤（腰）のライン</span>
+    <span><i style="background:#f6c90e"></i>両肩のライン</span>
+    <span><i style="background:rgba(252,129,129,.55)"></i>捻転差（骨盤と肩の角度の差）</span>
+    <span><i style="background:rgba(148,163,184,.45)"></i>両肩ラインが骨盤を追い越した分</span>
+  </div>
+  <p class="note">骨盤の開きは45〜90°が許容範囲で、この中なら選手が好きな角度でかまいません（「最後は90°」のような到達目標ではありません）。角度は説明のための模式値です。0°＝構えの向き。プラスは投手方向へ開く向き、マイナスは捕手側へひねる向き。</p>
+  <div class="sec3d">
+    <p class="label">3D VIEW</p>
+    <h1>立体で見る、体修塾の捻転差。</h1>
+    <p class="lead">上の図と同じ動きを、立体の打者で見ます。骨盤（青）と両肩（金）の間の赤い面が、胴体の「撚り」です。ロード中は撚れていません。ステップインの最終盤、骨盤が回るのと同時にスイングバックでヘッドが捕手側へ倒れ、上半身がその場に残ることで、一気に撚れます。側屈も結果として入るので、撚りの面は立体的にねじれます。最後は両肩ラインが骨盤を追い越し、面は逆向き（灰色）になります。骨盤の開き（45°／65°／90°）は上のボタンで切り替わります。ドラッグで視点を回せます。</p>
+    <div class="card">
+      <div class="band"></div>
+      <div id="wrap3d">
+        <canvas id="cv3d"></canvas>
+        <div id="tag3d"></div>
+        <div id="name3d"></div>
+        <div id="twist3d">撚り <b id="tw3">0°</b>　側屈 <b id="sb3" style="color:var(--gold)">0°</b></div>
+        <img class="wm" src="logo-text.png" alt="体修塾BCA">
+      </div>
+      <div class="pctrl" id="view3d">
+        <button data-v="pitcher">投手から</button>
+        <button data-v="side">横から（ベース側）</button>
+        <button data-v="catcher">捕手から</button>
+        <button data-v="top">真上から</button>
+        <button data-v="iso">斜めから</button>
+      </div>
+      <div class="pctrl">
+        <button id="play3d" class="on">一時停止</button>
+      </div>
+      <div class="slider"><span>時間</span><input type="range" id="sT3" min="0" max="1000" value="0"></div>
+      <p class="hint">時間は上の図と連動しています。</p>
+      <div class="where" id="where3d"></div>
+    </div>
+  </div>
+
+  <p class="note"><a href="index.html" style="color:var(--gold)">← 従来型の捻転差と比べる</a></p>
+  <p class="sig"><b>体修塾BCA</b>　Body Cultivate Academy</p>
+</div>
+
+<script>
+(function(){
+const Q=new URLSearchParams(location.search);
+if(Q.has('still')) document.body.classList.add('still');
+if(Q.has('shot')) document.body.classList.add('shot');
+
+// ===== タイムライン（t: 0〜1） =====
+const T_LOAD0=0.10, T_LOAD1=0.36, T_SB=0.54, T_LAND=0.68, T_IMP=0.86;
+// [t, 角度]  0°=構え、+＝投手方向へ開く、−＝捕手側へひねる
+// 完全着地での骨盤の開き A（45〜90°）。骨盤は着地で止まり、肩はそこから回って最後は骨盤を追い越す
+let OPEN=[45,65,90].includes(+Q.get('open'))?+Q.get('open'):45;
+const IMP_GAP={45:12,65:15,90:18};   // インパクトで残っている捻転差
+const FOLLOW_SH={45:0,65:10,90:25};  // 開きが大きいほど、肩も少し連れて回る（完全着地時の肩の角度）
+function keys(A){return {
+  P:[[0,0],[T_LOAD0,0],[T_LOAD1,0],[T_SB,4],[T_LAND,A],[T_IMP,A+2],[1,A+3]],
+  S:[[0,0],[T_LOAD0,0],[T_LOAD1,0],[T_SB,0],[T_LAND,FOLLOW_SH[A]],[T_IMP,A+2-IMP_GAP[A]],[1,A+38]]};}
+
+// 単調3次エルミート補間（Fritsch–Carlson）
+function mono(pts){
+  const n=pts.length,x=pts.map(p=>p[0]),y=pts.map(p=>p[1]),d=[],m=new Array(n);
+  for(let i=0;i<n-1;i++) d.push((y[i+1]-y[i])/(x[i+1]-x[i]));
+  m[0]=d[0]; m[n-1]=d[n-2];
+  for(let i=1;i<n-1;i++) m[i]=(d[i-1]*d[i]<=0)?0:(d[i-1]+d[i])/2;
+  for(let i=0;i<n-1;i++){
+    if(d[i]===0){m[i]=0;m[i+1]=0;continue;}
+    const a=m[i]/d[i],b=m[i+1]/d[i],s=a*a+b*b;
+    if(s>9){const k=3/Math.sqrt(s);m[i]=k*a*d[i];m[i+1]=k*b*d[i];}
+  }
+  return t=>{
+    if(t<=x[0])return y[0]; if(t>=x[n-1])return y[n-1];
+    let i=0; while(t>x[i+1])i++;
+    const h=x[i+1]-x[i],u=(t-x[i])/h,u2=u*u,u3=u2*u;
+    return (2*u3-3*u2+1)*y[i]+(u3-2*u2+u)*h*m[i]+(-2*u3+3*u2)*y[i+1]+(u3-u2)*h*m[i+1];
+  };
+}
+let PF,SF; function setKeys(A){const k=keys(A);PF=mono(k.P);SF=mono(k.S);} setKeys(OPEN);
+const pel=t=>PF(t), sho=t=>SF(t);
+const gap=t=>pel(t)-sho(t);            // 捻転差（プラス＝肩が骨盤より閉じている）
+// バネの張り：最終盤で一気に伸ばされ、待たずにスイングへ（抜ける時間がない）
+function spring(t){
+  if(t<T_SB+0.02) return null;
+  return 100;
+}
+
+function phase(t){
+  const A=OPEN, gI=Math.round(gap(T_IMP));
+  if(t<T_LOAD0) return ['PHASE 1','構え（セットアップ）','構えは自由です。リラックスして投手に集中できる姿勢を取ります。上から見た右打者で、<b>骨盤（青）と両肩（金）</b>はどちらも投手方向（上）にそろっています。'];
+  if(t<T_LOAD1) return ['PHASE 1','ロード：ひねらない','股関節を曲げて、体をベース側へ前傾させます（ロード）。上半身はヒッチでリズムを作るだけで、<b>捕手側へはひねりません</b>。捻転差は0、<b style="color:var(--gold)">戻す距離も0</b>です。'];
+  if(t<T_SB) return ['PHASE 2','移動（ステップイン）','ステップ動作で、踏み込み足へ体重を移します（ロードと同時に起こることもあります）。ロードした股関節の角度は保ったままです。上半身はヒッチのポジションをキープし、<b>その場に留まります（ステイ）</b>。まだ何も伸ばしていないので、抜けるバネもありません。'];
+  if(t<T_LAND) return ['PHASE 3','捻転創出（キックバック＆スイングバック）','踏み込み足に着圧し、床反力を受ける瞬間（<b>キックバック</b>）、股関節が内旋して<b>骨盤が投手方向へ鋭く回ります</b>。<b>同時にスイングバック</b>でヘッドが捕手側へ倒れます。上半身はその場に残るので、<b>ここで一気に捻転差が生まれます</b>。完全着地の時点で骨盤は'+A+'°'+(FOLLOW_SH[A]?'。開きが大きいぶん肩も'+FOLLOW_SH[A]+'°ほど連れて回り、捻転差は'+(A-FOLLOW_SH[A])+'°になります':'、肩は0°のまま')+'。下半身の「動き」の仕事はここで終わります。側屈も結果として入り、ボトムハンド側の体側が回旋と側屈の2方向から伸ばされます（3DのSSC）。'];
+  if(t<T_IMP-0.02) return ['PHASE 4','加速（回旋＆スイングアウト）','骨盤は'+A+'°で止まり、踏み込み足は地面反力をもらい続けます。捻転差が<b>一番大きい瞬間に胸椎の回旋が始まり</b>、バットが振り出されます。戻す距離がないので待ちません。伸びた直後に縮む、アンクルジャンプと同じ使い方です。'];
+  if(t<T_IMP+0.03) return ['IMPACT','インパクト（スイングフロント）','腰が先、肩があと。残り<b>'+gI+'°の捻転差を使いながら</b>加速し、ボールを捉えます。'];
+  return ['PHASE 5','完結（フォロー）','止まった骨盤を軸に肩だけが回り続け、<b>両肩ラインが骨盤を追い越していきます</b>。フォローは意識して作るものではなく、スイングの結果です。'];
+}
+
+// ===== 上から見た図 =====
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+function resize(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=r.width*d;cv.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);}
+window.addEventListener('resize',()=>{resize();draw(T);});
+const rad=a=>a*Math.PI/180;
+// 前側（投手側）の端の向き：θ=0で真上、+で左（開く）、−で右（捕手側へひねる＝プレート側へ入る）
+const front=a=>[-Math.sin(rad(a)),-Math.cos(rad(a))];
+
+function seg(cx,cy,a,half,color,w,labelBack,side){
+  const f=front(a),x1=cx+f[0]*half,y1=cy+f[1]*half,x2=cx-f[0]*half,y2=cy-f[1]*half;
+  ctx.strokeStyle=color;ctx.lineWidth=w;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+  ctx.fillStyle=color;ctx.beginPath();ctx.arc(x2,y2,w*0.75,0,Math.PI*2);ctx.fill();
+  ctx.font='700 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+  // ラベルは線の外側＋左右にずらして重ならないようにする
+  const nx=-f[1],ny=f[0],o=(side||0)*16;
+  const lx=cx-f[0]*(half+14)+nx*o,ly=cy-f[1]*(half+14)+ny*o;
+  ctx.fillText(labelBack,lx,ly);
+}
+function wedge(cx,cy,r,a0,a1,fill,stroke){
+  // 角度a0→a1の扇形（θの向き＝前側の端の向き）
+  const toCanvas=a=>Math.atan2(front(a)[1],front(a)[0]);
+  const s=toCanvas(a0),e=toCanvas(a1);
+  ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,s,e,a1>a0);ctx.closePath();
+  if(fill){ctx.fillStyle=fill;ctx.fill();}
+  if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke();}
+}
+
+function inset(x,y,r,s,rel,G){
+  ctx.save();
+  ctx.fillStyle='rgba(15,23,42,.92)';ctx.strokeStyle='#1e3a5f';ctx.lineWidth=1;
+  ctx.beginPath();ctx.arc(x,y,r+20*s,0,Math.PI*2);ctx.fill();ctx.stroke();
+  const toC=a=>Math.atan2(front(a)[1],front(a)[0]);
+  if(Math.abs(G)>0.5){
+    ctx.fillStyle=G>0?'rgba(252,129,129,.5)':'rgba(148,163,184,.3)';
+    [0,180].forEach(o=>{ctx.beginPath();ctx.moveTo(x,y);ctx.arc(x,y,r,toC(rel+o),toC(o),rel<0);ctx.closePath();ctx.fill();});
+  }
+  const ln=(a,len,c,w)=>{const f=front(a);ctx.strokeStyle=c;ctx.lineWidth=w;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x+f[0]*len,y+f[1]*len);ctx.lineTo(x-f[0]*len,y-f[1]*len);ctx.stroke();};
+  ln(0,r*0.62,'#7dd3fc',5*s); ln(rel,r*0.95,'#f6c90e',5*s);
+  ctx.fillStyle='#f8fafc';ctx.beginPath();ctx.arc(x,y,6*s,0,Math.PI*2);ctx.fill();
+  ctx.textAlign='center';ctx.fillStyle='#94a3b8';ctx.font='700 '+Math.round(9*s)+'px sans-serif';
+  ctx.fillText('骨盤から見た撚り',x,y-r-7*s);
+  ctx.fillStyle='#fc8181';ctx.font='900 '+Math.round(14*s)+'px sans-serif';
+  if(G<-1){ctx.fillStyle='#cbd5e1';ctx.fillText('追い越し '+Math.round(-G)+'°',x,y+r+12*s);} else ctx.fillText(Math.max(0,Math.round(G))+'°',x,y+r+12*s);
+  ctx.restore();
+}
+
+function draw(t){
+  const W=cv.clientWidth,H=cv.clientHeight;
+  ctx.clearRect(0,0,W,H);
+  const s=Math.min(W,H)/360, cx=W*0.44, cy=H*0.56;
+
+  const px=cx+120*s,py=cy+10*s,pw=34*s;
+  // 方向表示
+  ctx.fillStyle='#94a3b8';ctx.font='700 12px sans-serif';ctx.textAlign='center';
+  ctx.fillText('投手方向 ↑',px,cy-118*s);
+  ctx.fillText('捕手 ↓',cx,H-12);
+  // ホームベース（打者の右＝プレート側）
+  ctx.strokeStyle='#334155';ctx.lineWidth=2;ctx.beginPath();
+  ctx.moveTo(px-pw/2,py-pw/2);ctx.lineTo(px+pw/2,py-pw/2);ctx.lineTo(px+pw/2,py+pw*0.1);ctx.lineTo(px,py+pw*0.6);ctx.lineTo(px-pw/2,py+pw*0.1);ctx.closePath();ctx.stroke();
+
+  // 構えの基準線
+  ctx.setLineDash([4,5]);ctx.strokeStyle='#334155';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(cx,cy-120*s);ctx.lineTo(cx,cy+120*s);ctx.stroke();ctx.setLineDash([]);
+
+  const P=pel(t),S=sho(t),G=gap(t);
+  // 戻す距離（肩が捕手側にひねられている分）
+  if(S<-1){
+    ctx.save();ctx.setLineDash([5,4]);
+    const toC=a=>Math.atan2(front(a)[1],front(a)[0]);
+    ctx.strokeStyle='#f6c90e';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(cx,cy,112*s,toC(S),toC(0),true);ctx.stroke();ctx.restore();
+    const fm=front(S/2);ctx.fillStyle='#f6c90e';ctx.font='700 12px sans-serif';
+    ctx.fillText('戻す距離 '+Math.round(-S)+'°',cx+fm[0]*132*s,cy+fm[1]*132*s-4);
+  }
+  // 捻転差の扇形（前側・後ろ側の両方）
+  if(Math.abs(G)>0.5){
+    const col=G>0?'rgba(252,129,129,.45)':'rgba(148,163,184,.25)';
+    wedge(cx,cy,92*s,S,P,col,null);
+    wedge(cx,cy,92*s,S+180,P+180,col,null);
+  }
+  seg(cx,cy,P,58*s,'#7dd3fc',9*s,'右腰',-1);
+  seg(cx,cy,S,84*s,'#f6c90e',9*s,'右肩',1);
+  // 頭
+  ctx.fillStyle='#f8fafc';ctx.beginPath();ctx.arc(cx,cy,17*s,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#0a0e1a';ctx.beginPath();ctx.arc(cx,cy-9*s,4*s,0,Math.PI*2);ctx.fill();
+  // 撚りの角度（右腰と右肩の間）
+  if(G>5){
+    const toC=a=>Math.atan2(front(a)[1],front(a)[0]);
+    ctx.strokeStyle='#fc8181';ctx.lineWidth=2.5;
+    ctx.beginPath();ctx.arc(cx,cy,40*s,toC(S+180),toC(P+180),true);ctx.stroke();
+    const m=front((P+S)/2+180);
+    ctx.fillStyle='#fc8181';ctx.font='900 '+Math.round(13*s)+'px sans-serif';ctx.textAlign='center';
+    ctx.fillText('撚り '+Math.round(G)+'°',cx+m[0]*126*s,cy+m[1]*126*s+6*s);
+  } else if(G<-5){
+    const m=front((P+S)/2+180);
+    ctx.fillStyle='#cbd5e1';ctx.font='900 '+Math.round(13*s)+'px sans-serif';ctx.textAlign='center';
+    ctx.fillText('追い越し '+Math.round(-G)+'°',cx+m[0]*126*s,cy+m[1]*126*s+6*s);
+  }
+  // 小窓：骨盤を基準に固定して見た肩の撚り
+  inset(W-78*s,H-78*s,46*s,s,S-P,G);
+
+  const ph=phase(t);
+  document.getElementById('phaseTag').textContent=ph[0];
+  document.getElementById('phaseName').textContent=ph[1];
+  document.getElementById('where').innerHTML=ph[2];
+  document.getElementById('vX').textContent=G<-1?('追い越し '+Math.round(-G)+'°'):(Math.max(0,Math.round(G))+'°');
+  document.getElementById('vR').textContent=Math.max(0,Math.round(-S))+'°';
+  const sp=spring(t);
+  document.getElementById('vS').textContent=(sp===null||t>T_LAND)?'—':sp+'%';
+  cursor(t);
+  if(window.__draw3d) window.__draw3d(t);
+}
+
+// ===== グラフ =====
+const svg=document.getElementById('gr'),NS='http://www.w3.org/2000/svg';
+const GX0=44,GX1=628,GY0=34,GY1=204,A0=-20,A1=140;
+const gx=t=>GX0+(GX1-GX0)*t, gy=a=>GY1-(GY1-GY0)*(a-A0)/(A1-A0);
+function el(tag,attr,txt){const e=document.createElementNS(NS,tag);for(const k in attr)e.setAttribute(k,attr[k]);if(txt)e.textContent=txt;svg.appendChild(e);return e;}
+function buildGraph(){
+  const bands=[[0,T_LOAD1,'構え・ロード'],[T_LOAD1,T_SB,'ステップイン'],[T_SB,T_LAND,'捻転創出'],[T_LAND,T_IMP,'加速'],[T_IMP,1,'完結']];
+  bands.forEach((b,i)=>{
+    el('rect',{x:gx(b[0]),y:GY0,width:gx(b[1])-gx(b[0]),height:GY1-GY0,fill:i%2?'#0f172a':'#0b1222'});
+    el('text',{x:(gx(b[0])+gx(b[1]))/2,y:24,fill:'#94a3b8','font-size':11,'text-anchor':'middle'},b[2]);
+  });
+  [0,40,80,120].forEach(a=>{
+    el('line',{x1:GX0,x2:GX1,y1:gy(a),y2:gy(a),stroke:a===0?'#475569':'#1e293b','stroke-width':1});
+    el('text',{x:GX0-6,y:gy(a)+4,fill:'#64748b','font-size':10,'text-anchor':'end'},a+'°');
+  });
+  // 捻転差の塗り
+  let up='',dn='';const N=200;
+  for(let i=0;i<=N;i++){const t=i/N;up+=(i?'L':'M')+gx(t)+' '+gy(pel(t));}
+  for(let i=N;i>=0;i--){const t=i/N;dn+='L'+gx(t)+' '+gy(Math.min(sho(t),pel(t)));}
+  el('path',{d:up+dn+'Z',fill:'rgba(252,129,129,.45)'});
+  let up2='',dn2='';
+  for(let i=0;i<=N;i++){const t=i/N;up2+=(i?'L':'M')+gx(t)+' '+gy(Math.max(sho(t),pel(t)));}
+  for(let i=N;i>=0;i--){const t=i/N;dn2+='L'+gx(t)+' '+gy(pel(t));}
+  el('path',{d:up2+dn2+'Z',fill:'rgba(148,163,184,.4)'});
+  const line=(f,c)=>{let d='';for(let i=0;i<=N;i++){const t=i/N;d+=(i?'L':'M')+gx(t)+' '+gy(f(t));}el('path',{d,fill:'none',stroke:c,'stroke-width':3});};
+  line(pel,'#7dd3fc');line(sho,'#f6c90e');
+  [[T_LAND,'着地'],[T_IMP,'インパクト']].forEach(m=>{
+    el('line',{x1:gx(m[0]),x2:gx(m[0]),y1:GY0,y2:GY1,stroke:'#f8fafc','stroke-width':1,'stroke-dasharray':'3 3'});
+    el('text',{x:gx(m[0]),y:GY1+16,fill:'#f8fafc','font-size':11,'text-anchor':'middle'},m[1]);
+  });
+  el('text',{x:gx(T_SB)-4,y:gy(62),fill:'#fc8181','font-size':11,'font-weight':700,'text-anchor':'end'},'捻転創出で一気に生まれる');
+  el('text',{x:gx((T_LOAD0+T_SB)/2),y:gy(-12),fill:'#94a3b8','font-size':11,'font-weight':700,'text-anchor':'middle'},'ひねらない（捻転差0）');
+  el('text',{x:gx(T_LAND)+6,y:gy(128),fill:'#fc8181','font-size':11,'font-weight':700,'text-anchor':'start'},'山の頂上からスイング');
+  window._cur=el('line',{x1:0,x2:0,y1:GY0,y2:GY1,stroke:'#fc8181','stroke-width':2});
+}
+const svg2=document.getElementById('gr2');
+const HY0=16,HY1=140,B0=-45,B1=100, hy=a=>HY1-(HY1-HY0)*(a-B0)/(B1-B0);
+function el2(tag,attr,txt){const e=document.createElementNS(NS,tag);for(const k in attr)e.setAttribute(k,attr[k]);if(txt)e.textContent=txt;svg2.appendChild(e);return e;}
+function buildGraph2(){
+  const bands=[[0,T_LOAD1],[T_LOAD1,T_SB],[T_SB,T_LAND],[T_LAND,T_IMP],[T_IMP,1]];
+  bands.forEach((b,i)=>el2('rect',{x:gx(b[0]),y:HY0,width:gx(b[1])-gx(b[0]),height:HY1-HY0,fill:i%2?'#0f172a':'#0b1222'}));
+  [-30,0,30,60,90].forEach(a=>{
+    el2('line',{x1:GX0,x2:GX1,y1:hy(a),y2:hy(a),stroke:a===0?'#475569':'#1e293b','stroke-width':1});
+    el2('text',{x:GX0-6,y:hy(a)+4,fill:'#64748b','font-size':10,'text-anchor':'end'},a+'°');
+  });
+  const N=200;let d='M'+gx(0)+' '+hy(0);
+  for(let i=0;i<=N;i++){const t=i/N;d+='L'+gx(t)+' '+hy(Math.max(0,gap(t)));}
+  d+='L'+gx(1)+' '+hy(0)+'Z';
+  el2('path',{d,fill:'rgba(252,129,129,.35)'});
+  let d2='M'+gx(0)+' '+hy(0);
+  for(let i=0;i<=N;i++){const t=i/N;d2+='L'+gx(t)+' '+hy(Math.min(0,gap(t)));}
+  d2+='L'+gx(1)+' '+hy(0)+'Z';
+  el2('path',{d:d2,fill:'rgba(148,163,184,.35)'});
+  let tc=T_IMP;for(let i=0;i<=N;i++){const t=T_IMP+(1-T_IMP)*i/N;if(gap(t)<0){tc=t;break;}}
+  el2('text',{x:gx(1)-2,y:hy(-32),fill:'#cbd5e1','font-size':11,'font-weight':700,'text-anchor':'end'},'両肩ラインが骨盤を追い越す');
+  let l='';for(let i=0;i<=N;i++){const t=i/N;l+=(i?'L':'M')+gx(t)+' '+hy(gap(t));}
+  el2('path',{d:l,fill:'none',stroke:'#fc8181','stroke-width':3});
+  [[T_LAND,'着地'],[T_IMP,'インパクト']].forEach(m=>{
+    el2('line',{x1:gx(m[0]),x2:gx(m[0]),y1:HY0,y2:HY1,stroke:'#f8fafc','stroke-width':1,'stroke-dasharray':'3 3'});
+    el2('text',{x:gx(m[0]),y:HY1+16,fill:'#f8fafc','font-size':11,'text-anchor':'middle'},m[1]);
+  });
+  // 最大値とインパクト時の値
+  let tm=0,gm=-99;for(let i=0;i<=N;i++){const t=i/N;if(gap(t)>gm){gm=gap(t);tm=t;}}
+  el2('circle',{cx:gx(tm),cy:hy(gm),r:4,fill:'#fc8181'});
+  el2('text',{x:gx(tm),y:hy(gm)-8,fill:'#fc8181','font-size':11,'font-weight':700,'text-anchor':'middle'},'最大 '+Math.round(gm)+'°（完全着地＝スイング開始）');
+  el2('circle',{cx:gx(T_IMP),cy:hy(gap(T_IMP)),r:4,fill:'#fc8181'});
+  el2('text',{x:gx(T_IMP)+8,y:hy(gap(T_IMP))-8,fill:'#fc8181','font-size':11,'font-weight':700,'text-anchor':'start'},Math.round(gap(T_IMP))+'°');
+  window._cur2=el2('line',{x1:0,x2:0,y1:HY0,y2:HY1,stroke:'#fc8181','stroke-width':2});
+}
+function cursor(t){[window._cur,window._cur2].forEach(c=>{if(c){c.setAttribute('x1',gx(t));c.setAttribute('x2',gx(t));}});}
+
+// ===== 再生 =====
+let T=0,playing=!Q.has('still'),speed=1,last=null;
+const DUR=4200, sT=document.getElementById('sT'), pb=document.getElementById('play');
+if(Q.has('t')) T=Math.min(1,Math.max(0,parseFloat(Q.get('t'))||0));
+function loop(ts){
+  if(playing){
+    if(last!==null){T+=(ts-last)/DUR*speed; if(T>1.12)T=0;}
+    last=ts; const tt=Math.min(T,1); sT.value=Math.round(tt*1000); draw(tt);
+  } else last=null;
+  requestAnimationFrame(loop);
+}
+pb.onclick=()=>{playing=!playing;pb.textContent=playing?'一時停止':'再生';pb.classList.toggle('on',playing);};
+document.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>{speed=+b.dataset.sp;document.querySelectorAll('[data-sp]').forEach(x=>x.classList.toggle('on',x===b));});
+sT.oninput=()=>{T=sT.value/1000;if(playing)pb.onclick();draw(T);};
+window.__XF={pel,sho,gap,phase,T_LOAD0,T_LOAD1,T_SB,T_LAND,T_IMP,
+  toggle:()=>pb.onclick(), isPlaying:()=>playing,
+  setT:v=>{T=v;if(playing)pb.onclick();sT.value=Math.round(v*1000);draw(T);}};
+
+document.querySelectorAll('#openBtns button').forEach(b=>{b.classList.toggle('on',+b.dataset.a===OPEN);
+  b.onclick=()=>{OPEN=+b.dataset.a;setKeys(OPEN);svg.innerHTML='';svg2.innerHTML='';buildGraph();buildGraph2();draw(Math.min(T,1));
+    document.querySelectorAll('#openBtns button').forEach(x=>x.classList.toggle('on',x===b));};});
+resize();buildGraph();buildGraph2();draw(T);requestAnimationFrame(loop);
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  const XF=window.__XF; if(!XF||!window.THREE) return;
+  const T=THREE, cv=document.getElementById('cv3d'), wrap=document.getElementById('wrap3d');
+  const renderer=new T.WebGLRenderer({canvas:cv,antialias:true,preserveDrawingBuffer:true});
+  renderer.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+  const scene=new T.Scene(); scene.background=new T.Color(0x0a0e1a);
+  const cam=new T.PerspectiveCamera(36,4/3,0.1,100);
+  scene.add(new T.AmbientLight(0xffffff,0.6));
+  const key=new T.DirectionalLight(0xffffff,0.85); key.position.set(3,6,4); scene.add(key);
+  const rim=new T.DirectionalLight(0xfc8181,0.3); rim.position.set(-4,3,-3); scene.add(rim);
+  const WHITE=0xf8fafc, GRAY=0x94a3b8, NAVY=0x1e293b, BLUE=0x7dd3fc, GOLD=0xf6c90e, RED=0xfc8181;
+  const mat=(c,o)=>new T.MeshStandardMaterial({color:c,roughness:.6,metalness:.1,transparent:o!==undefined,opacity:o===undefined?1:o});
+  const rad=d=>d*Math.PI/180, up=new T.Vector3(0,1,0);
+  // 座標：投手方向＝+x、ホームベース側（打者の正面）＝+z、上＝+y。右打者。
+
+  // 床・ベース
+  const floor=new T.Mesh(new T.PlaneGeometry(4,4),mat(0x111827,.9)); floor.rotation.x=-Math.PI/2; scene.add(floor);
+  const grid=new T.GridHelper(4,10,0x1e3a5f,0x1e3a5f); grid.position.y=.001; scene.add(grid);
+  const plate=new T.Shape(); [[-.22,-.22],[.22,-.22],[.22,.05],[0,.27],[-.22,.05]].forEach((p,i)=>i?plate.lineTo(p[0],p[1]):plate.moveTo(p[0],p[1]));
+  const pm=new T.Mesh(new T.ShapeGeometry(plate),new T.MeshBasicMaterial({color:0x334155,side:T.DoubleSide}));
+  pm.rotation.x=-Math.PI/2; pm.rotation.z=Math.PI/2; pm.position.set(0.1,.003,0.85); scene.add(pm);
+  function label(text,color,pos,scale){const c=document.createElement('canvas');c.width=256;c.height=64;const x=c.getContext('2d');x.font='bold 30px sans-serif';x.fillStyle=color;x.textAlign='center';x.fillText(text,128,42);const sp=new T.Sprite(new T.SpriteMaterial({map:new T.CanvasTexture(c),transparent:true,depthTest:false}));sp.renderOrder=10;sp.scale.set(scale,scale/4,1);sp.position.copy(pos);return sp;}
+  scene.add(label('投手方向 →','#94a3b8',new T.Vector3(1.6,.08,-.2),.8));
+  scene.add(label('ホームベース','#64748b',new T.Vector3(.1,.08,1.25),.7));
+
+  // 体のパーツ
+  function cyl(r,c,o){const m=new T.Mesh(new T.CylinderGeometry(r,r,1,14),mat(c,o));scene.add(m);return m;}
+  function setCyl(m,a,b){const d=b.clone().sub(a);m.position.copy(a.clone().add(b).multiplyScalar(.5));m.scale.set(1,d.length(),1);m.quaternion.setFromUnitVectors(up,d.normalize());}
+  function ball(r,c){const m=new T.Mesh(new T.SphereGeometry(r,18,14),mat(c));scene.add(m);return m;}
+  const thighL=cyl(.055,NAVY),shinL=cyl(.045,NAVY),thighR=cyl(.055,NAVY),shinR=cyl(.045,NAVY);
+  const footL=ball(.05,GRAY),footR=ball(.05,GRAY),kneeL=ball(.05,NAVY),kneeR=ball(.05,NAVY);
+  const pelvisBar=cyl(.06,BLUE), hipL=ball(.075,BLUE), hipR=ball(.075,BLUE);
+  const spine=cyl(.045,WHITE);
+  const shoulderBar=cyl(.055,GOLD), shL=ball(.075,GOLD), shR=ball(.075,GOLD);
+  const head=ball(.11,WHITE);
+  const headLine=new T.Line(new T.BufferGeometry().setFromPoints([new T.Vector3(),new T.Vector3()]),new T.LineDashedMaterial({color:WHITE,dashSize:.05,gapSize:.04,transparent:true,opacity:.55})); scene.add(headLine);
+  const armL=cyl(.03,GRAY), armR=cyl(.03,GRAY);
+  const bat=new T.Mesh(new T.CylinderGeometry(.03,.014,1,14),mat(WHITE)); scene.add(bat);
+  const hipLbl=label('右腰','#7dd3fc',new T.Vector3(),.45), shLbl=label('右肩','#f6c90e',new T.Vector3(),.45); scene.add(hipLbl); scene.add(shLbl);
+
+  // 撚りの面（骨盤のラインと両肩のラインを結ぶ）
+  const NR=12, ribbonGeo=new T.BufferGeometry(), rpos=new Float32Array((NR+1)*2*3), ridx=[];
+  for(let i=0;i<NR;i++){const a=i*2,b=a+1,c=a+2,d=a+3; ridx.push(a,c,b,b,c,d);}
+  ribbonGeo.setAttribute('position',new T.BufferAttribute(rpos,3)); ribbonGeo.setIndex(ridx);
+  const ribbonMat=new T.MeshBasicMaterial({color:RED,transparent:true,opacity:.4,side:T.DoubleSide,depthWrite:false});
+  const ribbon=new T.Mesh(ribbonGeo,ribbonMat); scene.add(ribbon);
+  const edgeGeo=new T.BufferGeometry(), epos=new Float32Array((NR+1)*2*3); edgeGeo.setAttribute('position',new T.BufferAttribute(epos,3));
+  const eidx=[]; for(let i=0;i<=NR;i+=2) eidx.push(i*2,i*2+1); edgeGeo.setIndex(eidx);
+  const ribbonLines=new T.LineSegments(edgeGeo,new T.LineBasicMaterial({color:RED,transparent:true,opacity:.7})); scene.add(ribbonLines);
+
+  // 補間
+  function mono(pts){const n=pts.length,x=pts.map(p=>p[0]),y=pts.map(p=>p[1]),d=[],m=new Array(n);
+    for(let i=0;i<n-1;i++)d.push((y[i+1]-y[i])/(x[i+1]-x[i])); m[0]=d[0];m[n-1]=d[n-2];
+    for(let i=1;i<n-1;i++)m[i]=(d[i-1]*d[i]<=0)?0:(d[i-1]+d[i])/2;
+    for(let i=0;i<n-1;i++){if(d[i]===0){m[i]=0;m[i+1]=0;continue;}const a=m[i]/d[i],b=m[i+1]/d[i],s=a*a+b*b;if(s>9){const k=3/Math.sqrt(s);m[i]=k*a*d[i];m[i+1]=k*b*d[i];}}
+    return t=>{if(t<=x[0])return y[0];if(t>=x[n-1])return y[n-1];let i=0;while(t>x[i+1])i++;const h=x[i+1]-x[i],u=(t-x[i])/h,u2=u*u,u3=u2*u;
+      return (2*u3-3*u2+1)*y[i]+(u3-2*u2+u)*h*m[i]+(-2*u3+3*u2)*y[i+1]+(u3-u2)*h*m[i+1];};}
+  const {T_LOAD0:L0,T_LOAD1:L1,T_SB:SB,T_LAND:LD,T_IMP:IM}=XF;
+  const pelX=mono([[0,0],[L0,0],[L1,-.05],[SB,.06],[LD,.12],[IM,.14],[1,.15]]);        // 体重移動
+  const footX=mono([[0,.28],[L0,.28],[L1,.2],[LD,.62],[1,.62]]);               // 踏み込み足
+  const footY=mono([[0,0],[L0,0],[(L0+L1)/2,.1],[L1,.14],[(L1+LD)/2,.08],[LD,0],[1,0]]);
+  const batYaw=mono([[0,185],[L0,185],[L1,188],[SB,190],[LD,200],[IM,92],[1,-15]]);   // バットの水平方向
+  const batEl=mono([[0,62],[L0,62],[L1,62],[SB,60],[LD,14],[IM,-4],[1,28]]);   // スイングバック：立っていたバットが両肩ラインまで倒れる
+  const headX=mono([[0,0],[L0,0],[L1,-.05],[SB,.04],[1,.04]]);               // 頭の位置：捻転創出から先は動かさない         // バットの仰角
+  const FLEX=22; // 股関節屈曲（前傾）
+
+  const fr=a=>new T.Vector3(Math.cos(rad(a)),0,-Math.sin(rad(a)));   // 前側（投手側）の向き
+  const chestDir=a=>new T.Vector3(Math.sin(rad(a)),0,Math.cos(rad(a)));
+  let lastLbl=-1;
+  function pose(t){
+    const P=XF.pel(t),S=XF.sho(t),G=XF.gap(t);
+    const pc=new T.Vector3(pelX(t),.95,0);
+    const hl=pc.clone().add(fr(P).multiplyScalar(.17)), hr=pc.clone().sub(fr(P).multiplyScalar(.17));
+    setCyl(pelvisBar,hl,hr); hipL.position.copy(hl); hipR.position.copy(hr);
+    // 脚
+    const fl=new T.Vector3(footX(t),footY(t)+.05,.02), frt=new T.Vector3(-.36,.05,0);
+    const knee=(h,f)=>h.clone().add(f).multiplyScalar(.5).add(new T.Vector3(0,.02,.1));
+    const kl=knee(hl,fl),kr=knee(hr,frt);
+    setCyl(thighL,hl,kl);setCyl(shinL,kl,fl);setCyl(thighR,hr,kr);setCyl(shinR,kr,frt);
+    footL.position.copy(fl);footR.position.copy(frt);kneeL.position.copy(kl);kneeR.position.copy(kr);
+    // 上半身：前傾＋側屈（捕手側＝トップハンド側へ。結果として入る）
+    // 股関節屈曲の前傾（ベース側）は保ったまま、頭の位置を地面に対して保つ。側屈はその結果として生まれる
+    const SPL=.8, dx=headX(t)-pc.x, dz=SPL*Math.sin(rad(FLEX));
+    const u=new T.Vector3(dx,Math.sqrt(Math.max(.01,SPL*SPL-dx*dx-dz*dz)),dz).normalize();
+    const frh=fr(S), sideDeg=Math.asin(Math.max(-1,Math.min(1,-u.dot(frh))))*180/Math.PI;
+    const c=pc.clone().add(u.clone().multiplyScalar(.56));
+    setCyl(spine,pc,c);
+    const fs=fr(S).sub(u.clone().multiplyScalar(fr(S).dot(u))).normalize();   // 肩のラインは脊柱に直角
+    const sl=c.clone().add(fs.clone().multiplyScalar(.22)), sr=c.clone().sub(fs.clone().multiplyScalar(.22));
+    setCyl(shoulderBar,sl,sr); shL.position.copy(sl); shR.position.copy(sr);
+    head.position.copy(c.clone().add(u.clone().multiplyScalar(.24)));
+    headLine.geometry.setFromPoints([head.position.clone(),new T.Vector3(head.position.x,.005,head.position.z)]); headLine.computeLineDistances();
+    hipLbl.position.copy(hr.clone().add(new T.Vector3(0,-.13,0))); shLbl.position.copy(sr.clone().add(new T.Vector3(0,.14,0)));
+    // 撚りの面
+    for(let i=0;i<=NR;i++){const k=-1+2*i/NR;
+      const a=pc.clone().add(fr(P).multiplyScalar(.17*k)), b=c.clone().add(fs.clone().multiplyScalar(.22*k)).add(u.clone().multiplyScalar(-.04));
+      rpos.set([a.x,a.y,a.z],i*6); rpos.set([b.x,b.y,b.z],i*6+3); epos.set([a.x,a.y,a.z],i*6); epos.set([b.x,b.y,b.z],i*6+3);}
+    ribbonGeo.attributes.position.needsUpdate=true; ribbonGeo.computeBoundingSphere(); edgeGeo.attributes.position.needsUpdate=true;
+    const g=Math.max(0,G); ribbonMat.opacity=.08+.45*Math.min(1,g/45); ribbonMat.color.setHex(G>0?RED:GRAY);
+    // グリップとバット
+    const grip=c.clone().sub(fr(S).multiplyScalar(.1)).add(chestDir(S).multiplyScalar(.2)).add(new T.Vector3(0,-.12,0));
+    const y=rad(batYaw(t)),e=rad(batEl(t)), bd=new T.Vector3(Math.cos(e)*Math.cos(y),Math.sin(e),Math.cos(e)*Math.sin(y));
+    const tip=grip.clone().add(bd.clone().multiplyScalar(.85));
+    bat.position.copy(grip.clone().add(tip).multiplyScalar(.5)); bat.scale.y=.85; bat.quaternion.setFromUnitVectors(up,bd.clone().multiplyScalar(-1));
+    setCyl(armL,sl,grip); setCyl(armR,sr,grip);
+    // 表示
+    const gi=Math.round(G); if(gi!==lastLbl){document.getElementById('tw3').textContent=gi<-1?('追い越し '+(-gi)+'°'):(Math.max(0,gi)+'°');lastLbl=gi;}
+    document.getElementById('sb3').textContent=Math.max(0,Math.round(sideDeg))+'°';
+    const ph=XF.phase(t); document.getElementById('tag3d').textContent=ph[0]; document.getElementById('name3d').textContent=ph[1];
+    document.getElementById('where3d').innerHTML=ph[2];
+    document.getElementById('sT3').value=Math.round(t*1000);
+  }
+
+  // カメラ
+  let theta=0, phi=1.3, dist=4.1; const target=new T.Vector3(.12,.9,.1);
+  function updCam(){cam.position.set(target.x+dist*Math.sin(phi)*Math.sin(theta),target.y+dist*Math.cos(phi),target.z+dist*Math.sin(phi)*Math.cos(theta));cam.lookAt(target);}
+  const VIEWS={pitcher:[Math.PI/2,1.22],side:[0,1.3],catcher:[-Math.PI/2,1.22],top:[0,.06],iso:[.75,1.05]};
+  const vq=new URLSearchParams(location.search).get('view'); if(VIEWS[vq]){theta=VIEWS[vq][0];phi=VIEWS[vq][1];}
+  document.querySelectorAll('#view3d button').forEach(b=>{b.classList.toggle('on',b.dataset.v===(VIEWS[vq]?vq:'side'));
+    b.onclick=()=>{[theta,phi]=VIEWS[b.dataset.v];updCam();document.querySelectorAll('#view3d button').forEach(x=>x.classList.toggle('on',x===b));};});
+  let drag=false,lx=0,ly=0;
+  wrap.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;ly=e.clientY;wrap.style.cursor='grabbing';});
+  window.addEventListener('pointerup',()=>{drag=false;wrap.style.cursor='grab';});
+  window.addEventListener('pointermove',e=>{if(!drag)return;theta-=(e.clientX-lx)*.008;phi=Math.max(.06,Math.min(1.5,phi+(e.clientY-ly)*.006));lx=e.clientX;ly=e.clientY;updCam();});
+  function resize(){const w=wrap.clientWidth,h=wrap.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+  window.addEventListener('resize',resize); resize(); updCam();
+
+  // 操作（上の図と同じ時計）
+  const pb3=document.getElementById('play3d');
+  function syncBtn(){const p=XF.isPlaying();pb3.textContent=p?'一時停止':'再生';pb3.classList.toggle('on',p);}
+  pb3.onclick=()=>{XF.toggle();syncBtn();};
+  document.getElementById('play').addEventListener('click',()=>setTimeout(syncBtn,0));
+  document.getElementById('sT3').oninput=e=>{XF.setT(e.target.value/1000);syncBtn();};
+
+  window.__draw3d=t=>pose(Math.min(1,t));
+  const q=new URLSearchParams(location.search); pose(q.has('t')?Math.min(1,+q.get('t')||0):0); syncBtn();
+  (function loop(){renderer.render(scene,cam);requestAnimationFrame(loop);})();
+})();
+</script>
+</body>
+</html>
